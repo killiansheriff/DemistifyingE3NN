@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>MLIP and data efficiency &#8212; Demistiyfing E(3)-equivariant NN</title>
+    <title>MLIAP and Data Efficiency &#8212; Demistiyfing E(3)-equivariant NN</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   MLIP and data efficiency
+   MLIAP and Data Efficiency
   </a>
  </li>
 </ul>
@@ -376,7 +376,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>MLIP and data efficiency</h1>
+                <h1>MLIAP and Data Efficiency</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,8 +406,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="mlip-and-data-efficiency">
-<h1>MLIP and data efficiency<a class="headerlink" href="#mlip-and-data-efficiency" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mliap-and-data-efficiency">
+<h1>MLIAP and Data Efficiency<a class="headerlink" href="#mliap-and-data-efficiency" title="Permalink to this headline">#</a></h1>
 <p>In this section we will showcase data efficiency of equivariant neural networks by carrying out a case study of implementing Machine-Learning interatomic potentials (MLIAPs) that are often used to carry out large-scale molecular dynamic simulations in the field of computational material science.  Interatomic potentials (IAPs) are a group of functions <span class="math notranslate nohighlight">\(f: \mathcal{R}^{n_{nbi} \times m_{in}} \to \mathcal{R}^{m_{out}}\)</span> that maps the local information tensor of neighboring atoms in the vicinity of the center atom to a vector of <span class="math notranslate nohighlight">\(\mathcal{R}^{m_{out}}\)</span> that contains the potential energy and forces of the center atom.</p>
 <p>A critical bottleneck of the current field resides not only in the expressiveness of such MLIAPs, but also in the computational cost of generating accurate training and testing datasets using first-principle calculations such as Density-Functional Theory(DFT). The input representations used by status-quo MLIAPs are usually invariant to symmetries and translations of the local environment[1] which are shown to be very data-craving. As described in some prior works[2], MLIAPs with equivariant features have been proven to be more data-efficient than non-equivariant potentials thanks to its features and architectures.</p>
 <p>In this case study, we will make a direct comparison between en equivariant machine learning inter-atomic potential (Nequip)[2]  and a non-equivariant simple feed-forward Moment Tensor Potentials (MTP)[1]. The complete training dataset consists of <span class="math notranslate nohighlight">\(\sim 1250\)</span> structures of a 3-component alloy system obtained from DFT simulations, and we varied the training dataset size from <span class="math notranslate nohighlight">\(10\%\)</span> to <span class="math notranslate nohighlight">\(100\%\)</span> of the complete training dataset, each time increasing the fraciton by <span class="math notranslate nohighlight">\(10\%\)</span>.</p>
