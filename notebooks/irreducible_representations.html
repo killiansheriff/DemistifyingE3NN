@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Irreducible representations &#8212; Demistiyfing E(3)-equivariant NN</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Transformation under Euclidean symmetries" href="transformation_under_e3.html" />
+    <link rel="prev" title="Group representation" href="group_representation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/square.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Demistiyfing E(3)-equivariant NN</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Index
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="group_representation.html">
+   Group representation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Irreducible representations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="transformation_under_e3.html">
+   Transformation under Euclidean symmetries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="spherical_harmonics.html">
+   Spherical Harmonics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="equivariance_and_polynomials.html">
+   Equivariance and Polynomials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tensor_product.html">
+   Tensor Product
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_efficiency.html">
+   MLIP and data efficiency
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/killiansheriff/blog_e3nn/master?urlpath=tree/docs/notebooks/irreducible_representations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/killiansheriff/blog_e3nn/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/killiansheriff/blog_e3nn//issues/new?title=Issue%20on%20page%20%2Fnotebooks/irreducible_representations.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/irreducible_representations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Irreducible representations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="irreducible-representations">
+<h1>Irreducible representations<a class="headerlink" href="#irreducible-representations" title="Permalink to this headline">#</a></h1>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><img alt="square" src="../_images/irrep_2.png" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><b>Fig.1 - Transformation to irreducible representations.</b></p></td>
+</tr>
+</tbody>
+</table>
+<p>In this section, we will give the definition of irreducible representations and showcase how the reducible and irreducible representations of the same mathematical object can be transfered interchangably in the context of E(3)-equivariant neural networks.</p>
+<p>By definition, an irreducible representation is a representation that does not contain a smaller representation in it. For example, there is no nontrivial projector <span class="math notranslate nohighlight">\(P \in \mathcal{R}^{q\times d}\)</span> such that the function <span class="math notranslate nohighlight">\(g \to PD(g)P^t\)</span> is a representation. The irreducible representations of <span class="math notranslate nohighlight">\(SO(3)\)</span> are indexed by the integers <span class="math notranslate nohighlight">\(l=0,1,2,\dots\)</span>, and the <span class="math notranslate nohighlight">\(l\)</span>-irrep is of dimension <span class="math notranslate nohighlight">\(2l+1\)</span>. For example, <span class="math notranslate nohighlight">\(irrep(l=0) \in \mathcal{R}^1\)</span> corresponds to <span class="math notranslate nohighlight">\(\textit{scalars}\)</span>, <span class="math notranslate nohighlight">\(irrep(l=1) \in \mathcal{R}^3\)</span> corresponds to <span class="math notranslate nohighlight">\(\textit{vectors}\)</span>, and <span class="math notranslate nohighlight">\(irrep(l=2) \in \mathcal{R}^5\)</span> is the decomposition of a trace-less symmetric rank 2 tensor. A more detailed discussion of irreducible representations can be found here [\cite{E3NN paper + ref.21}].</p>
+<p>Here, we will use the example of a random rank-2 tensor <span class="math notranslate nohighlight">\(A \in \mathcal{R}^{3\times 3}\)</span>, and show how we can decompose tensor <span class="math notranslate nohighlight">\(A\)</span> into irreducible representations of <span class="math notranslate nohighlight">\(l=0,1,2\)</span>: namely, a scalar corresponding to the tensor trace <span class="math notranslate nohighlight">\(tr(A)\)</span>, a pseudovector corresponding to the anti-symmetric component, and a 5 component irrep corresponding to the trace-less component of the symmetric component of tensor <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>First, we can decompose tensor <span class="math notranslate nohighlight">\(A\)</span> into a symmetric part <span class="math notranslate nohighlight">\(A_{sym}\)</span> and a trace-less anti-symmetric part <span class="math notranslate nohighlight">\(A_{anti-sym}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[A = A_{sym} + A_{anti-sym} = \frac{A+A^T}{2} + \frac{A-A^T}{2}\]</div>
+<p>where,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A_{sym}=\begin{bmatrix}
+   a_{11} &amp; \frac{1}{2}(a_{12}+a_{21}) &amp; \frac{1}{2}(a_{13}+a_{31}) \\
+   \frac{1}{2}(a_{12}+a_{21}) &amp; a_{22} &amp; \frac{1}{2}(a_{23}+a_{32}) \\
+   \frac{1}{2}(a_{13}+a_{31}) &amp; \frac{1}{2}(a_{23}+a_{32}) &amp; a_{33}
+   \end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A_{anti-sym}=\begin{bmatrix}
+   0 &amp; \frac{1}{2}(a_{12}-a_{21}) &amp; \frac{1}{2}(a_{13}-_{31}) \\
+   \frac{1}{2}(a_{21}-a_{12}) &amp; 0 &amp; \frac{1}{2}(a_{23}-a_{32}) \\
+   \frac{1}{2}(a_{31}-a_{13}) &amp; \frac{1}{2}(a_{32}-a_{23}) &amp; 0
+   \end{bmatrix}
+\end{split}\]</div>
+<p>and we can further decouple the symmetric part <span class="math notranslate nohighlight">\(A_{sym}\)</span> into a identity matrix multiplied by the trace <span class="math notranslate nohighlight">\(tr(A)\)</span> and a traceless symmetric matrix <span class="math notranslate nohighlight">\(A^\prime_{sym}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A_{sym}= \frac{1}{3}tr(A)\cdot \textbf{I} + A^\prime_{sym} = \frac{a_{11}+a_{22}+a_{33}}{3}\cdot \textbf{I} + \begin{bmatrix}
+   \frac{2}{3}a_{11}-\frac{1}{3}a_{22}-\frac{1}{3}a_{33} &amp; \frac{1}{2}(a_{12}+a_{21}) &amp; \frac{1}{2}(a_{13}+a_{31}) \\
+   \frac{1}{2}(a_{12}+a_{21}) &amp; \frac{2}{3}a_{22}-\frac{1}{3}a_{11}-\frac{1}{3}a_{33} &amp; \frac{1}{2}(a_{23}+a_{32}) \\
+   \frac{1}{2}(a_{13}+a_{31}) &amp; \frac{1}{2}(a_{23}+a_{32}) &amp; \frac{2}{3}a_{33}-\frac{1}{3}a_{11}-\frac{1}{3}a_{22}
+   \end{bmatrix}
+\end{split}\]</div>
+<p>Such that overall, tensor <span class="math notranslate nohighlight">\(A\)</span> can be decomposed into the following terms:</p>
+<div class="math notranslate nohighlight">
+\[A = tr(A)\cdot \textbf{I} + A_{anti-sym} + A^\prime_{sym} \]</div>
+<p>and if we write it element-wise:</p>
+<div class="math notranslate nohighlight">
+\[A_{ij} = \frac{1}{3}tr(A)\delta_{ij} + \frac{1}{2}(a_{ij}-a_{ji}) + \frac{1}{2}(a_{ij}+a_{ji}-\frac{2}{3}\delta_{ij}tr(A))\]</div>
+<p>Notice that each of the three parts of the two equations above are preserved by rotations, and thus we have successfully decomposed a rank-2 tensor into irreducible representations of <span class="math notranslate nohighlight">\(l=0,1,2\)</span>, in the sense that:</p>
+<div class="math notranslate nohighlight">
+\[tr(A) = a_{11}+a_{22}+a_{33} \to irrep^{l=0} \quad \text{is a scalar with DOF=1}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}A_{anti-sym} = \begin{bmatrix}
+   0 &amp; v_1 &amp; v_2 \\
+   -v_1 &amp; 0 &amp; v_3 \\
+   -v_2 &amp; -v_3 &amp; 0
+   \end{bmatrix} \to irrep^{l=1} = \begin{bmatrix} v_1\\ v_2\\ v_3\end{bmatrix} \quad \text{is a vector with DOF=3}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^\prime_{sym} = \begin{bmatrix}
+   l_1 &amp; l_3 &amp; l_4 \\
+   l_3 &amp; l_2 &amp; l_5 \\
+   l_4 &amp; l_5 &amp; 0-l_1-l_2
+   \end{bmatrix} \to irrep^{l=2} = \begin{bmatrix} l_1\\ l_2\\ l_3\\ l_4\\ l_5\end{bmatrix} \quad \text{is a l=2 irreducible representation with DOF=5}\end{split}\]</div>
+<p>In e3nn, the irreducible representation of a rank-2 tensor can be written in simplified format as “1x0e + 1x1o + 1x2o”. Similar to the example of rank-2 tensor shown above, higher-order mathematical objects can also be decomposed into irreducible representations, as shown in the e3nn paper [\cite].</p>
+<p>The fact that irreducible representations can be obtained by decomposing arbitrary mathematical objects sets the foundation of E(3)-equivariant neural networks, where all input and output data are used in the form of irreducible representation class called <code class="docutils literal notranslate"><span class="pre">Irrep</span></code>.</p>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://math.stackexchange.com/questions/1425825/two-notions-of-so3s-irreps-whats-the-connection-between-them">https://math.stackexchange.com/questions/1425825/two-notions-of-so3s-irreps-whats-the-connection-between-them</a></p></li>
+<li><p><a class="reference external" href="https://pcgschool2018.files.wordpress.com/2018/06/pcgschool_irrep_analysis_l1_version2.pdf">https://pcgschool2018.files.wordpress.com/2018/06/pcgschool_irrep_analysis_l1_version2.pdf</a></p></li>
+<li><p><a class="reference external" href="http://www.physics.usu.edu/Wheeler/QuantumMechanics/QMWignerEckartTheorem.pdf">http://www.physics.usu.edu/Wheeler/QuantumMechanics/QMWignerEckartTheorem.pdf</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="group_representation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Group representation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="transformation_under_e3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Transformation under Euclidean symmetries</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Killian Sheriff, Yifan Cao<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
