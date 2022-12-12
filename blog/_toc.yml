@@ -1,0 +1,14 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+chapters:
+- file: notebooks/group_representation
+- file: notebooks/irreducible_representations
+- file: notebooks/transformation_under_e3
+- file: notebooks/spherical_harmonics
+- file: notebooks/equivariance_and_polynomials
+- file: notebooks/tensor_product
+- file: notebooks/data_efficiency
+
