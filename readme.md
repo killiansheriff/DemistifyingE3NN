@@ -2,7 +2,7 @@
 
 ## Demistifying E(3)-equivariant neural networks!
 
-Check out the website: https://killiansheriff.github.io/blog_e3nn/index.html
+Check out the website: https://killiansheriff.github.io/DemistifyingE3NN/index.html
 
 Welcome to our blog post on demistifying E(3)-equivariant neural networks! This blog aim to introduces the following concepts, in order to understand the mathematical tools leading to learnable equivariant operations:
 
